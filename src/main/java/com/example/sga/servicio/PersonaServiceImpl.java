@@ -11,7 +11,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 
 @Stateless
-public class PersonaServiceImpl implements PersonaService {
+public class PersonaServiceImpl implements PersonaServiceRemote, PersonaService {
 
     @Override
     public List<Persona> listarPersonas() {

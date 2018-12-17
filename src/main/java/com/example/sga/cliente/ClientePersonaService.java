@@ -22,7 +22,7 @@ public class ClientePersonaService {
         try {
             Context jndi = new InitialContext();
             PersonaServiceRemote personaService
-                    = (PersonaServiceRemote) jndi.lookup("java:global/sga-jee/PersonaServiceRemoteImpl!com.example.sga.servicio.PersonaServiceRemote");
+                    = (PersonaServiceRemote) jndi.lookup("java:global/sga-jee/PersonaServiceImpl!com.example.sga.servicio.PersonaServiceRemote");
             List<Persona> personas = personaService.listarPersonas();
             for (Persona persona : personas) {
                 System.out.println(persona);
