@@ -124,7 +124,6 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.example.sga.domain.Usuarios[ idUsuario=" + idUsuario + " ]";
-    }
-    
+        return "Usuario{" + "idUsuario=" + idUsuario + ", username=" + username + ", password=" + password + ", idPersona=" + idPersona + '}';
+    }    
 }

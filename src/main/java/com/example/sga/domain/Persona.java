@@ -154,7 +154,9 @@ public class Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "com.example.sga.domain.Personas[ idPersona=" + idPersona + " ]";
+        return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apePaterno=" + apePaterno + ", apeMaterno=" + apeMaterno + ", email=" + email + ", telefono=" + telefono + '}';
     }
+
+    
     
 }
