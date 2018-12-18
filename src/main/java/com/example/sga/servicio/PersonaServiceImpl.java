@@ -6,24 +6,25 @@
 package com.example.sga.servicio;
 
 import com.example.sga.domain.Persona;
-import java.util.ArrayList;
+import com.example.sga.eis.PersonaDao;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 
 @Stateless
 public class PersonaServiceImpl implements PersonaServiceRemote, PersonaService {
 
+    @Inject
+    private PersonaDao personaDao;
+    
     @Override
     public List<Persona> listarPersonas() {
-        List<Persona> personas = new ArrayList<>();
-        personas.add(new Persona(1, "Juan", "Perez", "Suarez", "jperez@gmail.com", "55668798"));
-        personas.add(new Persona(2, "Martha", "Suarez", "Jimenez", "msuarez@mail.com", "566998811"));
-        return personas;
+        return personaDao.findAllPersonas();
     }
 
     @Override
     public Persona encontrarPersonaPorId(Persona persona) {
-        return null;
+        return personaDao.findPersonaById(persona);
     }
 
     @Override
