@@ -76,6 +76,14 @@ public class Persona implements Serializable {
         this.idPersona = idPersona;
     }
 
+    public Persona(String nombre, String apePaterno, String apeMaterno, String email, String telefono) {
+        this.nombre = nombre;
+        this.apePaterno = apePaterno;
+        this.apeMaterno = apeMaterno;
+        this.email = email;
+        this.telefono = telefono;
+    }
+
     public Integer getIdPersona() {
         return idPersona;
     }
@@ -155,8 +163,5 @@ public class Persona implements Serializable {
     @Override
     public String toString() {
         return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apePaterno=" + apePaterno + ", apeMaterno=" + apeMaterno + ", email=" + email + ", telefono=" + telefono + '}';
-    }
-
-    
-    
+    }    
 }
