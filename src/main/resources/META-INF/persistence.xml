@@ -15,6 +15,7 @@
     <persistence-unit name="ConsolaJpqlPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>com.example.sga.domain.Persona</class>
+        <class>com.example.sga.domain.Usuario</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.99.100:3306/recursos_humanos?useSSL=false"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
