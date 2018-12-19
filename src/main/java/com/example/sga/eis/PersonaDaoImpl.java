@@ -29,22 +29,23 @@ public class PersonaDaoImpl implements PersonaDao {
 
     @Override
     public Persona findPersonaByEmail(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //return em.find(Persona.class, persona.getEmail());
+        return (Persona) em.createNamedQuery("Persona.findByEmail").getSingleResult();
     }
 
     @Override
     public void insertPersona(Persona persona) {
-        
+        em.persist(persona);
     }
 
     @Override
     public void updatePersona(Persona persona) {
-        
+        em.merge(persona);
     }
 
     @Override
     public void deletePersona(Persona persona) {
-        
+        em.remove(persona);
     }
     
 }
