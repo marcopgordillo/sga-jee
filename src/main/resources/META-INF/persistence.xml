@@ -17,7 +17,7 @@
         <class>com.example.sga.domain.Persona</class>
         <class>com.example.sga.domain.Usuario</class>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/recursos_humanos?useSSL=false"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.99.100:3306/recursos_humanos?useSSL=false"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="sasa"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

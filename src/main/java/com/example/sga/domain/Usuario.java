@@ -7,8 +7,10 @@ package com.example.sga.domain;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -54,8 +56,8 @@ public class Usuario implements Serializable {
     private String password;
     
     @JoinColumn(name = "id_persona", referencedColumnName = "id_persona")
-    @ManyToOne
-    private Persona idPersona;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Persona persona;
 
     public Usuario() {
     }
@@ -68,6 +70,13 @@ public class Usuario implements Serializable {
         this.idUsuario = idUsuario;
         this.username = username;
         this.password = password;
+    }
+    
+    public Usuario(Integer idUsuario, String username, String password, Persona persona) {
+        this.idUsuario = idUsuario;
+        this.username = username;
+        this.password = password;
+        this.persona = persona;
     }
 
     public Integer getIdUsuario() {
@@ -94,12 +103,12 @@ public class Usuario implements Serializable {
         this.password = password;
     }
 
-    public Persona getIdPersona() {
-        return idPersona;
+    public Persona getPersona() {
+        return persona;
     }
 
-    public void setIdPersona(Persona idPersona) {
-        this.idPersona = idPersona;
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     @Override
@@ -124,6 +133,6 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "Usuario{" + "idUsuario=" + idUsuario + ", username=" + username + ", password=" + password + ", idPersona=" + idPersona + '}';
+        return "Usuario{" + "idUsuario=" + idUsuario + ", username=" + username + ", password=" + password + ", idPersona=" + persona + '}';
     }    
 }
